@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "598282786600",
+    "project_id": "draweer-auth",
+    "storage_bucket": "draweer-auth.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598282786600:android:d1d47ee927d7e8d80f221d",
+        "android_client_info": {
+          "package_name": "com.example.claude"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWgPdBnM0myuWkNbntmB40nJ0s_i8_axk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598282786600:android:8a74d3629803033b0f221d",
+        "android_client_info": {
+          "package_name": "com.example.draw_auth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWgPdBnM0myuWkNbntmB40nJ0s_i8_axk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598282786600:android:aa2f0dd3bbc97bee0f221d",
+        "android_client_info": {
+          "package_name": "com.example.draweer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWgPdBnM0myuWkNbntmB40nJ0s_i8_axk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
