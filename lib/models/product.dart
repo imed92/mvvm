@@ -1,15 +1,12 @@
-// 🛍️ MODÈLE PRODUIT - Représente un produit de Fake Store API
 class Product {
-  // 📊 PROPRIÉTÉS DU PRODUIT
-  final int id;              // ID unique du produit
-  final String title;        // Nom du produit
-  final double price;        // Prix en dollars
-  final String description;  // Description détaillée
-  final String category;     // Catégorie (electronics, clothes, etc.)
-  final String image;        // URL de l'image
-  final Rating rating;       // Note et nombre d'avis
+  final int id;
+  final String title;
+  final double price;
+  final String description;
+  final String category;
+  final String image;
+  final Rating rating;
 
-  // 🏗️ CONSTRUCTEUR - Obligatoire pour créer un Product
   Product({
     required this.id,
     required this.title,
@@ -20,63 +17,36 @@ class Product {
     required this.rating,
   });
 
-  // 🔄 FACTORY CONSTRUCTOR - Crée un Product à partir de JSON (API)
+  // Création depuis JSON
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      id: json['id'] as int,                           // Récupère l'ID depuis le JSON
-      title: json['title'] as String,                 // Récupère le titre
-      price: (json['price'] as num).toDouble(),       // Convertit price en double
-      description: json['description'] as String,      // Récupère la description
-      category: json['category'] as String,           // Récupère la catégorie
-      image: json['image'] as String,                 // Récupère l'URL image
-      rating: Rating.fromJson(json['rating']),        // Crée Rating depuis sous-objet JSON
+      id: json['id'] as int,
+      title: json['title'] as String,
+      price: (json['price'] as num).toDouble(),
+      description: json['description'] as String,
+      category: json['category'] as String,
+      image: json['image'] as String,
+      rating: Rating.fromJson(json['rating']),
     );
   }
 
-  // 📄 CONVERSION EN JSON - Pour sauvegarder en cache local
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'title': title,
-      'price': price,
-      'description': description,
-      'category': category,
-      'image': image,
-      'rating': rating.toJson(),  // Convertit Rating en JSON aussi
-    };
-  }
-
-  // 💰 GETTER CALCULÉ - Prix formaté pour l'affichage
+  // Prix formaté
   String get formattedPrice => '${price.toStringAsFixed(2)} €';
 
-  // ⭐ GETTER CALCULÉ - Affichage des étoiles avec note
+  // Affichage des étoiles
   String get starsDisplay => '⭐ ${rating.rate.toStringAsFixed(1)} (${rating.count})';
 }
 
-// ⭐ MODÈLE RATING - Représente la note d'un produit
 class Rating {
-  final double rate;  // Note moyenne (ex: 4.2)
-  final int count;    // Nombre d'avis (ex: 150)
+  final double rate;
+  final int count;
 
-  // 🏗️ CONSTRUCTEUR
-  Rating({
-    required this.rate,
-    required this.count,
-  });
+  Rating({required this.rate, required this.count});
 
-  // 🔄 FACTORY depuis JSON - Fake Store API renvoie ça : {"rate": 4.2, "count": 150}
   factory Rating.fromJson(Map<String, dynamic> json) {
     return Rating(
-      rate: (json['rate'] as num).toDouble(),  // Assure que c'est un double
-      count: json['count'] as int,             // Assure que c'est un int
+      rate: (json['rate'] as num).toDouble(),
+      count: json['count'] as int,
     );
-  }
-
-  // 📄 CONVERSION en JSON pour le cache
-  Map<String, dynamic> toJson() {
-    return {
-      'rate': rate,
-      'count': count,
-    };
   }
 }

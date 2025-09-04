@@ -69,6 +69,11 @@ class AppDrawer extends StatelessWidget {
             title: const Text('Third Page'),
             onTap: () => _go(context, '/third'),
           ),
+          ListTile(
+            leading: const Icon(Icons.shopping_bag),
+            title: const Text('Produits'),
+            onTap: () => _go(context, '/products'),
+          ),
 
           const Divider(),
 
