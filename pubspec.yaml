@@ -13,6 +13,10 @@ dependencies:
   cupertino_icons: ^1.0.8
   firebase_core: ^2.32.0
   firebase_auth: ^4.17.0
+  # NOUVEAUX : Packages pour MVVM + API
+  provider: ^6.1.2              # Gestion d'état MVVM
+  http: ^1.2.1                  # Appels API vers Fake Store
+  cached_network_image: ^3.3.1  # Images optimisées avec cache
 
 dev_dependencies:
   flutter_test:
