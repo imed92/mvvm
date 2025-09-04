@@ -1,19 +1,16 @@
-import 'package:flutter/foundation.dart';
-import '../models/product.dart';
-import '../services/api_service.dart';
+import 'package:flutter/foundation.dart';             // Fournit ChangeNotifier (mécanisme pour notifier l’UI des changements)
+import '../models/product.dart';                      // Import du modèle Product
+import '../services/api_service.dart';                // Import du service qui gère les appels API
 
-class ProductsViewModel extends ChangeNotifier {
-  final ApiService _apiService = ApiService();
+class ProductsViewModel extends ChangeNotifier {      // ViewModel qui gère l’état des produits et notifie l’UI
+  final ApiService _apiService = ApiService();        // Instance privée du service API (utilisée pour fetch les données)
 
-  // Ici on définit nos états des données
-
-  // Une variable devient un état quand :
-  // Sa valeur peut évoluer dans le temps.
-  // Ce changement a un impact direct sur ce que l’UI doit afficher.
+  // --------------------
   // États des données
-  List<Product> _products = [];                       // Liste de produits (underscore = privé au fichier/bibliothèque)
-  bool _isLoading = false;                            // Indique si un chargement est en cours
-  String _errorMessage = '';                          // Message d’erreur lisible par l’UI (chaîne vide = pas d’erreur)
+  // --------------------
+  List<Product> _products = [];                       // Liste privée de produits (données récupérées depuis l’API)
+  bool _isLoading = false;                            // Indique si un chargement est en cours (true = spinner affiché)
+  String _errorMessage = '';                          // Message d’erreur (chaîne vide = pas d’erreur)
 
   // Getters publics
   List<Product> get products => _products;            // Expose la liste en lecture seule (pas de setter public)
